@@ -25,13 +25,30 @@ public class Coche extends Vehiculo {
 
 	@Override
 	public void avanzarVehiculo(Integer kilometros) {
+		// comprobamos si queda combustible para avanzar
 
-		 // establecemos el nuevo cuentakilometros suma lo avanzado
-		
-		this.setKilometros(this.getKilometros() + kilometros);
-		
-		 // restamos los litros correspondieste por cada kilometro avanzado
-		this.setEstado_deposito(getEstado_deposito() - kilometros * 2);
+		if (this.getEstado_deposito() != 0) {
+
+			// establecemos el nuevo cuentakilometros suma lo avanzado
+			// restamos los litros consumidos
+
+			for (int i = 1; i < kilometros || i == kilometros; i++) {
+
+				this.setEstado_deposito(getEstado_deposito() - 2);
+				this.setKilometros(getKilometros() + 1);
+
+				if (this.getEstado_deposito() == 0) {
+
+					this.setEstado_deposito(0);
+
+					
+					break;
+
+				}
+				;
+
+			}
+		}
 
 	}
 

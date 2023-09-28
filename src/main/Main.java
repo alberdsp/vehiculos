@@ -29,9 +29,9 @@ public class Main {
 
 		// avanzamos 25km cada vehículo
 
-		coche.avanzarVehiculo(25);
-		moto.avanzarVehiculo(25);
-		camion.avanzarVehiculo(25);
+		coche.avanzarVehiculo(10);
+		moto.avanzarVehiculo(10);
+		camion.avanzarVehiculo(10);
 
 		// obtenemos la info de cada uno
 

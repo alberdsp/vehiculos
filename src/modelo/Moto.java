@@ -29,14 +29,31 @@ public class Moto extends Vehiculo{
 		@Override
 		public void avanzarVehiculo(Integer kilometros) {
 
-		     
-			 // establecemos el nuevo cuentakilometros suma lo avanzado
-			
-			this.setKilometros(this.getKilometros() + kilometros);
-			
-			 // restamos los litros correspondieste por cada kilometro avanzado
-			
-			this.setEstado_deposito(getEstado_deposito() - kilometros);
+			// comprobamos si queda combustible para avanzar
+
+			if (this.getEstado_deposito() != 0) {
+
+				// establecemos el nuevo cuentakilometros suma lo avanzado
+				// restamos los litros consumidos
+
+				for (int i = 1; i < kilometros || i == kilometros; i++) {
+
+					this.setEstado_deposito(getEstado_deposito() - 1);
+					this.setKilometros(getKilometros() + 1);
+
+					if (this.getEstado_deposito() == 0) {
+
+						this.setEstado_deposito(0);
+
+						
+
+						break;
+
+					}
+					;
+
+				}
+			}
 
 		}
 
@@ -54,7 +71,7 @@ public class Moto extends Vehiculo{
 			System.out.println(" _________________________________ ");
 			System.out.println("                                   ");
 			System.out.println(
-					" Coche: " + this.getMarca().toUpperCase() + " con matricula" + this.getMatricula().toUpperCase());
+					" Moto: " + this.getMarca().toUpperCase() + " con matricula " + this.getMatricula().toUpperCase());
 			System.out.println(" Kilometros: " + this.getKilometros());
 			System.out.println(" Estado deposito: " + estado_deposito);
 			System.out.println(" _________________________________ ");
