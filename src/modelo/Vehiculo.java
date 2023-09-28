@@ -1,36 +1,13 @@
 package modelo;
 
-import modelo.Vehiculo.Coche;
+
 
 /**
  * @author Alber 2023 clase Vehiculo
  * 
  */
 
-
-
-
-
 public abstract class Vehiculo {
-	
-
-public static void main(String[] args) {
-		
-		
-		// aquí el la lógica
-		
-		System.out.println(" hola");
-		
-		
-		Coche mercedes = new Coche("mercedes"," ADV3556", 100, 10) ;
-		
-		mercedes.avanzarVehiculo(5);
-		
-		mercedes.infoVehiculo();
-		
-		};
-	
-	
 	
 	
 	
@@ -50,13 +27,13 @@ public static void main(String[] args) {
 	protected Integer estado_deposito;
 	
 
-	public Vehiculo(String marca, String matricula, Integer kilometros, Integer cap_deposito, Integer estado_deposito) {
+	public Vehiculo(String marca, String matricula, Integer kilometros, Integer cap_deposito) {
 		super();
 		this.marca = marca;
 		this.matricula = matricula;
 		this.kilometros = kilometros;
 		this.cap_deposito = cap_deposito;
-		this.estado_deposito = estado_deposito;
+	
 	}
 
 	
@@ -169,71 +146,6 @@ public static void main(String[] args) {
 	public abstract void avanzarVehiculo(Integer kilometros);
 	
 	public abstract void infoVehiculo();
-	
-	
-	
-	
-	
-	/**
-	 * clase Coches
-	 * 
-	 */
-	
-	
-	public static class Coche extends Vehiculo{
-
-		public Coche(String marca, String matricula, Integer kilometros, Integer estado_deposito) {
-			super(marca, matricula, kilometros,10, estado_deposito);
-
-		}
-
-		@Override
-		public void llenarDeposito() {
-			
-			// establecemos en 10 litros, lleno
-			this.setEstado_deposito(10);
-			
-			
-		}
-
-		@Override
-		public void avanzarVehiculo(Integer kilometros) {
-			
-			//Integer avanzakm = this.getKilometros()+kilometros;
-			this.setKilometros(this.getKilometros()+kilometros);
-			this.setEstado_deposito(getEstado_deposito()-kilometros*2);
-			
-						
-		}
-
-		@Override
-		public void infoVehiculo() {
-			
-			System.out.println(" ******* Estado del Coche ******** ");
-			System.out.println(" _________________________________ ");
-			System.out.println("                                   ");
-			System.out.println(" Kilometros:" + this.getKilometros());
-			System.out.println(" _________________________________ ");
-			
-			
-			
-			
-		}
-		
-		
-		
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 }
